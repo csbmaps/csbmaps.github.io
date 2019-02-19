@@ -1,57 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>Valentine's Day Base Map Design using Mapbox</title>
-
-<meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <style>
-       html {
-           /*full screen the map*/
-           height: 100%;
-       }
-
-       body {
-           height: 100%;
-           padding: 0;
-           margin: 0;
-       }
-
-       #map {
-           width: 100%;
-           height: 100%;
-       }
-   </style>
-
-<!-- Stylesheet -->
-<link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.css" rel='stylesheet'/>
-<!-- Javascript Libraries -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
-<script src="http://cdn.leafletjs.com/leaflet/v1.4.0/leaflet.js"></script>
-<!-- mapbox gl js -->
-<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.js"></script>
-<!-- leaflet mapbox js -->
-<script src="http://rawgit.com/mapbox/mapbox-gl-leaflet/master/leaflet-mapbox-gl.js"></script>
-
-<!-- <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script> -->
-
+  <meta charset='utf-8' />
+  <title>Valentines's Theme Base Map Design in Mapbox</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
 </head>
-
 <body>
 
-<div id="map"></div>
+<div id='map'></div>
 <script>
-    var map = L.map('map').setView([44.572, -123.278], 12.8);
-
-    mapbox_token = 'pk.eyJ1IjoiY3NiZW5uZXR0IiwiYSI6ImNqcnF6emhucDFzY2w0OW9vaGRsdm14c3cifQ.3OHjHlvKD0rJVlqVrUPQQw';
-    var gl = L.mapboxGL({
-        accessToken: mapbox_token,
-        style: href='assets/style.json',
-        attribution: 'Created By <a href="https://github.com/csbmaps/">Cameron Bennett</a> based on the <a href="assets/license.txt">Mapbox basic style</a>'
-    }).addTo(map);
+mapboxgl.accessToken = 'pk.eyJ1IjoiY3NiZW5uZXR0IiwiYSI6ImNqcnF6emhucDFzY2w0OW9vaGRsdm14c3cifQ.3OHjHlvKD0rJVlqVrUPQQw';
+const map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/csbennett/cjsahqo4800f81fldsb2r9s9k',
+  center: [-123.27, 44.565],
+  zoom: 12.9
+});
 </script>
 
 </body>
-
 </html>
